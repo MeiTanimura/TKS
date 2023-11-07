@@ -30,15 +30,15 @@
 			<form th:action="@{/login}" method="post" th:object="${loginForm}">
 				<table>
 					<tr>
-						<th><label>UserID</label></th>
+						<th class="need"><label>UserID</label></th>
 						<td><input class="write" type="text" th:field="*{loginId}"></td>
 					</tr>
 					<tr>
-						<th><label>MailAdress</label></th>
+						<th class="need"><label>MailAdress</label></th>
 						<td><input class="write" type="email"></td>
 					</tr>
 					<tr>
-						<th><label>PassWord</label></th>
+						<th class="need"><label>PassWord</label></th>
 						<td><input class="write" type="password" th:field="*{password}"></td>
 					</tr>
 				</table>
