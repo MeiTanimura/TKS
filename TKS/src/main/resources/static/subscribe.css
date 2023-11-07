@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 header {
 	width: 100;
@@ -74,6 +74,22 @@ form th{
 	color: aqua;
 }
 
+.need{
+	 padding-right: 4em;
+    position: relative;
+}
+
+.need::after{
+	content: "必須";
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    border: 1px solid #CCC;
+    padding: 0 5px;
+    font-size: 85%;
+    background: #d40000;
+    color: #FFF;
+}
+
     
-
-

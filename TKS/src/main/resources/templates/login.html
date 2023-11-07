@@ -22,31 +22,34 @@
 	</header>
 
 	<!-- -- -- -- -- -- --【ログイン画面】-- -- -- -- -- -- -->
-	<main>
+
 	<div class="LoginForm">
 		<h1>ログイン</h1>
 
 
 
 		<form th:action="@{/login}" method="post" th:object="${loginForm}">
-			<div>
-				<label>UserID</label>
-				<input type="text" th:field="*{loginId}">
-			</div>
+			<table>
+				<tr>
+					<th><label>UserID</label></th>
+					<td><input class="write" type="text" th:field="*{loginId}"></td>
+				</tr>
+				<tr>
+					<th><label>PassWord</label></th>
+					<td><input class="write" type="password" th:field="*{password}"></td>
+				</tr>
+			</table>
 
 
 
-			<div>
-				<label>PassWord</label>
-				<input type="password" th:field="*{password}">
-			</div>
-			<input type="submit" value="登録">
+			<input class="button" type="submit" value="登録">
+
 		</form>
-		<a href="subscribe.html">新規会員登録はこちら</a>
+		<a class="subscription" href="subscribe.html">新規会員登録はこちら</a>
 
 	</div>
 
-	
+
 
 </main>
 </body>

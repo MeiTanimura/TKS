@@ -7,18 +7,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ログイン画面</title>
 	<!-- リセットCSSを読み込む処理を記述 -->
-	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="../static/reset.css">
 	<!-- cssファイルを読み込む処理を記述 -->
-	<link rel="stylesheet" href="">
-</head>
-<body>
-	<!-- -- -- -- -- -- --【ヘッダー】-- -- -- -- -- -- -->
-	<header>
-		<img src="driveline.png">
-		<h1>JavaTeamDeveropment</h1>
-	</header>
-	
-	<h1></h1>
+	<link rel="stylesheet" href="../static/subscribe.css">
 
+</head>
+
+<body>
+
+	<main>
+		<!-- -- -- -- -- -- --【ヘッダー】-- -- -- -- -- -- -->
+		<header>
+			<img src="../static/picture/DL.png">
+			<h1>JavaTeamDeveropment</h1>
+		</header>
+
+		<div class="LoginForm">
+			<h1>新規会員登録</h1>
+
+
+
+			<form th:action="@{/login}" method="post" th:object="${loginForm}">
+				<table>
+					<tr>
+						<th><label>UserID</label></th>
+						<td><input class="write" type="text" th:field="*{loginId}"></td>
+					</tr>
+					<tr>
+						<th><label>MailAdress</label></th>
+						<td><input class="write" type="email"></td>
+					</tr>
+					<tr>
+						<th><label>PassWord</label></th>
+						<td><input class="write" type="password" th:field="*{password}"></td>
+					</tr>
+				</table>
+
+
+
+				<input class="button" type="submit" value="登録">
+
+			</form>
+			<a class="subscription" href="login.html">ログイン画面へ</a>
+
+		</div>
+
+
+
+	</main>
 </body>
+
 </html>
