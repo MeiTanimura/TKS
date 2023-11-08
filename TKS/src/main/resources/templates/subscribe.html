@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -7,9 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ログイン画面</title>
 	<!-- リセットCSSを読み込む処理を記述 -->
-	<link rel="stylesheet" href="../static/reset.css">
+	<link rel="stylesheet" th:href="@{/reset.css}">
 	<!-- cssファイルを読み込む処理を記述 -->
-	<link rel="stylesheet" href="../static/subscribe.css">
+	<link rel="stylesheet" th:href="@{/subscribe.css}">
 
 </head>
 
@@ -18,7 +18,7 @@
 	<main>
 		<!-- -- -- -- -- -- --【ヘッダー】-- -- -- -- -- -- -->
 		<header>
-			<img src="../static/picture/DL.png">
+			<img th:src="@{/picture/DL.png}">
 			<h1>JavaTeamDeveropment</h1>
 		</header>
 
@@ -35,7 +35,7 @@
 					</tr>
 					<tr>
 						<th class="need"><label>MailAdress</label></th>
-						<td><input class="write" type="email"></td>
+						<td><input class="write" type="email" th:field="*{mailAddress}"></td>
 					</tr>
 					<tr>
 						<th class="need"><label>PassWord</label></th>
@@ -48,7 +48,7 @@
 				<input class="button" type="submit" value="登録">
 
 			</form>
-			<a class="subscription" href="login.html">ログイン画面へ</a>
+			<a class="subscription" th:href="@{/login}">ログイン画面へ</a>
 
 		</div>
 

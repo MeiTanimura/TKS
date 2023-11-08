@@ -11,14 +11,25 @@ import com.example.demo.controller.form.LoginForm;
 @Controller
 public class LoginController {
 	
+	private static final String LOGIN_ID ="user";
+	private static final String PASSWORD ="pwd";
+	
 	@GetMapping("/login")
 	public String view(Model model, LoginForm form) {
-		
+		model.addAttribute("loginForm", form);
 		return "login";
 	}
 
-	@PostMapping
-	public void login(LoginForm form) {
-		System.out.println(form.toString());
+	@PostMapping("/login")
+	public String login(Model model, LoginForm form) {
+		var isCorrectUserAuth = form.getLoginId().equals(LOGIN_ID)
+				&& form.getPassword().equals(PASSWORD);
+		if(isCorrectUserAuth) {
+			return "redirect:/top";
+		}  else {
+			model.addAttribute("errorMsg","エラー");
+			return "login";
+		}
 	}
+	
 }

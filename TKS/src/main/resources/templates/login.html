@@ -7,17 +7,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ログイン画面</title>
 	<!-- リセットCSSを読み込む処理を記述 -->
-	<link rel="stylesheet" href="../static/reset.css">
+	<link rel="stylesheet" th:href="@{/reset.css}">
 	<!-- cssファイルを読み込む処理を記述 -->
-	<link rel="stylesheet" href="../static/login.css">
+	<link rel="stylesheet" th:href="@{/login.css}">
 
 </head>
 
-<main>
+<body>
+
 
 	<!-- -- -- -- -- -- --【ヘッダー】-- -- -- -- -- -- -->
 	<header>
-		<img src="../static/picture/DL.png">
+		<img th:src="@{/picture/DL.png}">
 		<h1>JavaTeamDeveropment</h1>
 	</header>
 
@@ -26,7 +27,7 @@
 	<div class="LoginForm">
 		<h1>ログイン</h1>
 
-
+		<span th:text="${errorMsg}"></span>
 
 		<form th:action="@{/login}" method="post" th:object="${loginForm}">
 			<table>
@@ -45,13 +46,14 @@
 			<input class="button" type="submit" value="登録">
 
 		</form>
-		<a class="subscription" href="subscribe.html">新規会員登録はこちら</a>
+		<a class="subscription" th:href="@{/subscribe}">新規会員登録はこちら</a>
+		</form>
 
 	</div>
 
 
 
-</main>
+
 </body>
 
 </html>

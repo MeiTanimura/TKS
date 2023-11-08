@@ -1,39 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>TOP画面</title>
+	<title>ログイン画面</title>
 	<!-- リセットCSSを読み込む処理を記述 -->
-	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" th:href="@{/reset.css}">
 	<!-- cssファイルを読み込む処理を記述 -->
-	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" th:href="@{/top.css}">
 
 </head>
 
 <body>
 	<!-- -- -- -- -- -- --【ヘッダー】-- -- -- -- -- -- -->
 	<header>
-		<img src="driveline.png">
+		<img th:src="@{/picture/DL.png}">
 		<h1>JavaTeamDeveropment</h1>
 	</header>
 
 	<!-- -- -- -- -- -- --【TOP】-- -- -- -- -- -- -->
 	<div class="top">
-		<div class="subscription">
-			<h1>自己紹介登録</h1>
-			<input type="submit" value="登録へ進む">
-			<p>自己紹介を作ります。<br>あなたをより知ってもらうために、<br>趣味や一言を工夫しましょう。<br>最高の自己紹介を完成させて、よりあなたを<br>知ってもらえるチャンスにしましょう。</p>
-		</div>
+		<div class="LoginForm">
+			<h1>新規会員登録</h1>
 
-		<div class="edit">
-			<h1>自己紹介登録者一覧</h1>
-			<input type="submit" value="一覧を登録する">
-			<p>登録している人を確認します。<br>登録している人の自己紹介を見てみましょう。</p>
+			<div class="subscription">
+				<h1>自己紹介登録</h1>
+				<input type="submit" value="登録へ進む" >
+				<p>自己紹介を作ります。<br>あなたをより知ってもらうために、<br>趣味や一言を工夫しましょう。<br>最高の自己紹介を完成させて、よりあなたを<br>知ってもらえるチャンスにしましょう。</p>
+			</div>
+
+			<div class="edit">
+				<h1>自己紹介登録者一覧</h1>
+				<input type="submit" value="一覧を登録する">
+				<p>登録している人を確認します。<br>登録している人の自己紹介を見てみましょう。</p>
+			</div>
 		</div>
-	</div>
 	</div>
 
 
