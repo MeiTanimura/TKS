@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <form th:action="@{/introform}" th:object="${introForm}" method="post">
+ 
+ <div class = "item">
+ <label class= "label">名前</label>
+  <input type="text" th:value="*{name}" th:field="*{name}"/>
+  </div>
+  
+  <div class = "item">
+ <label class= "label">フリガナ</label>
+  <input type="text" th:value="*{name}" th:field="*{kanaName}"/>
+  </div>
+ 
+ <div class = "item">
+ <label class= "label">性別</label>
+<for th:each = "item : *{getGenderItems()}">
+<input type = "radio" th:value="${item.key}" th:text="${item.value}"th:field="*{gender}"/>
+</for>
+  </div>
+
+ <div th:each"item":${checkboxItems}">
+ <label class= "label">趣味</label>
+<input type = "checkbox" name="inputHobbyCheck" "th:value="${item.key}" th:text="${item.value}" th:field="*｛checkboxItems}"/>
+</for>
+  </div>
+
+  一言
+   
+    
+    <button>送信</button>
+
+</body>
+</html>

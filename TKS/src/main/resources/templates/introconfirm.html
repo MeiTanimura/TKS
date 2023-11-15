@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>自己紹介登録確認</h1>
+<form method="post" th:action="@{/introForm}" th:object="${introForm}">
+    <p th:text="'名前 ' + *{name}"></p>
+    <p th:text="'フリガナ ' + *{kanaName}"></p>
+    <p th:text="'性別 ' + *{getGenderItems().get('__*{gender}__')}"></p>
+   <p class = "msg" th:each = "checked:*{inputHobbyCheck}" th:text="${checked}">
+   </p>
+  
+    
+</body>
+</html>
