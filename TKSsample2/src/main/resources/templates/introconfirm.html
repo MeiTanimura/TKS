@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>自己紹介登録確認</h1>
+<form method="post" th:action="@{/introForm}" th:object="${introForm}">
+    
+    <span class="required"><p th:text="'名前 ' + *{name}"></p></span>
+
+    <p th:text="'フリガナ ' + *{kanaName}"></p>
+    <p th:text="'性別 ' + *{getGenderItems().get('__*{gender}__')}"></p>
+</form>  
+  
+    
+</body>
+</html>

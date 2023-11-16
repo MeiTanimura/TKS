@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <link th:href="@{/css/introform.css}" rel="stylesheet"/>
+</head>
+<body>
+<h1>自己紹介の内容を記入して下さい</h1>
+ <form th:action="@{/introform}" th:object="${introForm}" method="post">
+ 
+ <div class = "item">
+ <label class= "label">名前</label>
+  <input class="inputs" type="text" th:value="*{name}" th:field="*{name}" required/>
+  </div>
+  
+  <div class = "item">
+ <label class= "label">フリガナ</label>
+  <input class="inputs" input type="text" th:value="*{name}" th:field="*{kanaName}"/>
+  </div>
+
+ <div class = "item">
+  <div class="inputs">
+ <label class= "label">性別</label>
+<for th:each = "item : *{getGenderItems()}">
+<input type = "radio" th:value="${item.key}" th:text="${item.value}"th:field="*{gender}"/>
+
+</for>
+</div>
+  </div>
+  
+
+
+
+
+  一言
+   
+    
+    <button>送信</button>
+
+</body>
+</html>
