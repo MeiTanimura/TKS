@@ -12,8 +12,10 @@
 
     <p th:text="'フリガナ ' + *{kanaName}"></p>
     <p th:text="'性別 ' + *{getGenderItems().get('__*{gender}__')}"></p>
+    <div th:each="item : ${introform}">
+    <p th:text="${item}"></p>
 </form>  
   
-    
+    </div>
 </body>
 </html>

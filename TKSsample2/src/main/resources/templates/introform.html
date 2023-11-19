@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>自己紹介の内容を記入して下さい</h1>
- <form th:action="@{/introform}" th:object="${introForm}" method="post">
+ <form th:action="@{/introconfirm}" th:object="${introForm}" method="post">
  
  <div class = "item">
  <label class= "label">名前</label>
@@ -25,6 +25,13 @@
 <for th:each = "item : *{getGenderItems()}">
 <input type = "radio" th:value="${item.key}" th:text="${item.value}"th:field="*{gender}"/>
 
+<div class = "item">
+  <div class="inputs">
+ <label class= "label">趣味</label>
+<label th:each="item:${hobbyCheckBox}" th:object="${introForm}">
+      <input type="checkbox" name="selectedHobby"
+       th:value="${item.key}" th:text="${item.value}"
+       th:field="*{selectHobbys}"/>
 </for>
 </div>
   </div>

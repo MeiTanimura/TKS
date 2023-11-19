@@ -10,15 +10,14 @@ public class IntroForm {
 	private String name;
 	private String kanaName;
 	private String gender;
-	private String[]inputHobbyCheck;
-	public String[] getHobbyCheck() {
-		return inputHobbyCheck;
+	
+	private String[] selectHobbys;
+	public String[] getSelectHobbys() {
+		return selectHobbys;
+	}	
+	public void setSelectHobbys(String[] selectHobbys) {
+		this.selectHobbys = selectHobbys;
 	}
-		
-	public void setHobbyCheck(String[] inputHobbyCheck) {
-		this.inputHobbyCheck = inputHobbyCheck;
-	}
-	//private String message;
 	
 	public Map<String, String> getGenderItems() {
 		Map<String, String> genderMap = new LinkedHashMap<String, String>();
@@ -26,6 +25,8 @@ public class IntroForm {
 		genderMap.put("2", "女性");
 		return genderMap;
 	}
+	
+	
 	
 	
 }
