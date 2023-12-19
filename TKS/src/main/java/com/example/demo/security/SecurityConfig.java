@@ -22,7 +22,7 @@ public class SecurityConfig {
 		 * ログイン時に起動するURLの指定
 		 * ユーザーIDのname属性の指定
 		 */
-		http.formLogin(login -> login.loginPage("/loginScreen").usernameParameter("userId").defaultSuccessUrl("/topScreen2"));
+		http.formLogin(login -> login.loginPage("/login").usernameParameter("userId").defaultSuccessUrl("/top"));
 		/**
 		 * URL認証設定
 		 */
