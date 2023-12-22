@@ -55,7 +55,7 @@ public class LoginController {
 	 */
 	@PostMapping("/top")
 	public String top(Model model, LoginForm form) {
-		var users = service.searchUserById(form.getLoginId());
+		var users = service.searchUserById(form.getUserId());
 		// TODO パスワードはハッシュ化したものを使用する
 		var isCorrectUserAuth = users.isPresent()
 				&& passwordEncoder.matches(form.getPassword(), users.get().getPassword());

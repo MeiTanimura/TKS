@@ -25,10 +25,10 @@ public class LoginService {
 	/**
 	 * ユーザー情報テーブルキー検索
 	 * 
-	 * @param loginId ログインID
+	 * @param userId ログインID
 	 * @return 検索結果
 	 */
-	public Optional<Users> searchUserById(String loginId) {
-		return repository.findById(loginId);
+	public Optional<Users> searchUserById(String userId) {
+		return repository.findById(userId);
 	}
 }

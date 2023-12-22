@@ -8,10 +8,13 @@ import lombok.Data;
  *
  */
 @Data
-public class LoginForm {
+public class SubscribeForm {
 
 	/** ログインID */
-	private String userId;
+	private String UserId;
+	
+	/** メールアドレス */
+	private String mailAddress;
 
 	/** パスワード  */
 	private String password;

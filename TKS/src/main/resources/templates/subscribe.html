@@ -27,11 +27,11 @@
 
 
 
-			<form th:action="@{/login}" method="post" th:object="${loginForm}">
+			<form th:action="@{/subscribe}" method="post" th:object="${subscribeForm}">
 				<table>
 					<tr>
 						<th class="need"><label>UserID</label></th>
-						<td><input class="write" type="text" th:field="*{loginId}"></td>
+						<td><input class="write" type="text" th:field="*{UserId}"></td>
 					</tr>
 					<tr>
 						<th class="need"><label>MailAdress</label></th>
