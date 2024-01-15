@@ -25,9 +25,11 @@ public class Users {
 	private String userId;
 
 	/** メールアドレス */
+	@Column(name = "email")
 	private String email;
 
 	/** パスワード */
+	@Column(name = "password")
 	private String password;
 
 	/** 取得日時 */
