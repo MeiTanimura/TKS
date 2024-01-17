@@ -1,12 +1,13 @@
 package com.example.demo.controller;
 
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.SubscribeForm;
-import com.example.demo.service.SubdcribeService;
+import com.example.demo.service.SubscribeService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,10 +22,10 @@ import lombok.RequiredArgsConstructor;
 public class SubscribeController {
 
 	/** 登録画面 service*/
-	private final SubdcribeService service;
+	private final SubscribeService service;
 //
 //	/** メッセージソース */
-//	private final MessageSource messageSource;
+	private final MessageSource messageSource;
 
 	/**
 	 * 初期表示
@@ -46,9 +47,17 @@ public class SubscribeController {
 	 * @param form 入力情報
 	 * @return 表示画面
 	 */
-	@PostMapping("/subscribe")
-	public void subscribe(Model model, SubscribeForm form) {
-		var users = service.resistUserById(form);
+	@PostMapping("/top2")
+	public String subscribe(Model model, SubscribeForm form) {
+		var usersOpt = service.resistUsers(form);
+		if(usersOpt.isEmpty()) {
+//			var errorMsg = AppUtil.getMessage(messageSource, MessageConst, LOGIN_WRONG_INPUT);
+//			model.addAttribute("message", errorMsg);
+			return "subscribe";
+		} else {
+//			var message = AppUtil.getMessage(messageSource, null, null)
+			return "redirect:/top2";
+		}
 
 	}
 }

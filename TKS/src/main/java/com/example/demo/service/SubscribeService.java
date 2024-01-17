@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import java.util.Date;
+import java.util.Optional;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +20,10 @@ import lombok.RequiredArgsConstructor;
  */
 @Service
 @RequiredArgsConstructor
-public class SubdcribeService {
+public class SubscribeService {
 
 	/** ユーザー情報テーブルDAO */
-	private final UsersRepository repository;
+	private final UsersRepository usersRepository;
 	
 
 	/** PasswordEncoder */
@@ -33,8 +36,14 @@ public class SubdcribeService {
 	 * @param form 入力情報
 	 * @return 表示画面
 	 */
-	public Users resistUserById(SubscribeForm form) {
+	public Optional<Users> resistUsers(SubscribeForm form) {
+		var usersExistedOpt = usersRepository.findById(form.getUserId());
+		if(usersExistedOpt.isPresent()) {
+			return Optional.empty();
+		}
+		Date now = new Date();
 		var users = new Users();
+		
 		users.setUserId(form.getUserId());
 		users.setPassword(form.getPassword());
 		users.setEmail(form.getMailAddress());
@@ -42,6 +51,6 @@ public class SubdcribeService {
 		var encodedPassword = passwordEncoder.encode(form.getPassword());
 		users.setPassword(encodedPassword);
 		
-		return repository.save(users);
+		return Optional.of(usersRepository.save(users));
 	}
 }

@@ -1,9 +1,9 @@
-let button = docment.getElementById('button');
+let button = docment.getElementById('btn');
 
 button.addEventListener('click', function(event) {
 	event.preventDefault();
 	let userID = document.getElementById('userID').value;
-	let password = document.getElementById('password').value;
+	let password = document.getElementById('passWord').value;
 	let mailAddress = document.getElementById('mailAddress').value;
 
 	let formElement = document.form.login_form;

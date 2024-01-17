@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="IE=edge">
 	<title>ログイン画面</title>
 	<!-- リセットCSSを読み込む処理を記述 -->
 	<link rel="stylesheet" th:href="@{/reset.css}">
 	<!-- cssファイルを読み込む処理を記述 -->
 	<link rel="stylesheet" th:href="@{/subscribe.css}">
+	<!-- jsを追加-->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -29,25 +29,25 @@
 
 
 
-			<form th:action="@{/subscribe}" method="post" th:object="${subscribeForm}">
+			<form th:action="@{/top2}" method="post" th:object="${subscribeForm}">
 				<table>
 					<tr>
 						<th class="need"><label>UserID</label></th>
-						<td><input class="write" type="text" th:field="*{UserId}"></td>
+						<td><input class="write" id="userID" type="text" th:field="*{UserId}"></td>
 					</tr>
 					<tr>
 						<th class="need"><label>MailAdress</label></th>
-						<td><input class="write" type="email" th:field="*{mailAddress}"></td>
+						<td><input class="write" id="mailAddress" type="email" th:field="*{mailAddress}"></td>
 					</tr>
 					<tr>
 						<th class="need"><label>PassWord</label></th>
-						<td><input class="write" type="password" th:field="*{password}"></td>
+						<td><input class="write" id="passWord" type="password" th:field="*{password}"></td>
 					</tr>
 				</table>
 
 
 
-				<input class="button" type="submit" value="登録">
+				<input class="button" id="btn" type="submit" value="登録">
 
 			</form>
 			<a class="subscription" th:href="@{/login}">ログイン画面へ</a>
@@ -57,7 +57,7 @@
 
 
 	</main>
-	<script src="subscribe.js"></script>
+	<script src="../static/subscribe.js"></script>
 </body>
 
 </html>

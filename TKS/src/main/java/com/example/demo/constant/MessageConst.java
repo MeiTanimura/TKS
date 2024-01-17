@@ -6,7 +6,7 @@ package com.example.demo.constant;
  * @author reo1213
  *
  */
-public class ErrorMessageConst {
+public class MessageConst {
 
 	/** ログイン画面：入力内容誤り */
 	public static final String LOGIN_WRONG_INPUT = "login.wrongInput";
